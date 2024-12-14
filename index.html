@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        /* Background styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        /* Centered content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Main title */
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        /* Subtitle text */
+        p {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 1rem;
+        }
+
+        /* Button styling */
+        .wish-btn {
+            background: #ff6f61;
+            border: none;
+            border-radius: 25px;
+            padding: 0.75rem 2rem;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .wish-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Balloon animation */
+        .balloons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 60px;
+            height: 80px;
+            background-color: #ff6f61;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: inset -10px -10px rgba(0, 0, 0, 0.1);
+            animation: float 10s infinite;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background-color: #ff6f61;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(calc(100vw - 50px)) translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Profile Image Styling */
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-top: 1rem;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container for content -->
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <img src="https://source.unsplash.com/random/150x150/?person" alt="Birthday Person" class="profile-img">
+        <p>Wishing you a day filled with love, laughter, and unforgettable moments.</p>
+        <button class="wish-btn" onclick="alert('Have an amazing birthday! 🎉')">Send a Wish</button>
+    </div>
+
+    <!-- Floating balloons for a festive touch -->
+    <div class="balloons">
+        <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="balloon" style="left: 30%; animation-delay: 2s; background-color: #ffd700;"></div>
+        <div class="balloon" style="left: 50%; animation-delay: 4s; background-color: #ff1493;"></div>
+        <div class="balloon" style="left: 70%; animation-delay: 6s; background-color: #87cefa;"></div>
+        <div class="balloon" style="left: 90%; animation-delay: 8s; background-color: #98fb98;"></div>
+    </div>
+</body>
+</html>
